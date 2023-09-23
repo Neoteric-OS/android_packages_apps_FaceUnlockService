@@ -24,6 +24,10 @@ public class FaceUnlockUtils {
         return SystemProperties.getBoolean("ro.face_unlock_service.enabled", false);
     }
 
+    public static boolean isFaceUnlockPixelSupported() {
+        return SystemProperties.getBoolean("ro.face_unlock_pixel_service.enabled", false);
+    }
+
     public static Intent getServiceIntent() {
         Intent intent = new Intent("org.pixelexperience.faceunlock.BIND");
         intent.setComponent(ComponentName.unflattenFromString(
